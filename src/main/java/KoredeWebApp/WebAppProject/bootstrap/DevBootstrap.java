@@ -12,7 +12,7 @@ import KoredeWebApp.WebAppProject.repositories.BookRepository;
 
 @Component
 public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> { //the applistener is like an event and the one
-    // we want now is context
+    // we want now is something within the context
 private AuthorRepository authorRepository;
 private BookRepository bookRepository;
 private PublisherRepository publisherRepository;
@@ -25,6 +25,7 @@ private PublisherRepository publisherRepository;
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
+
         initData();
     }
 
@@ -51,6 +52,4 @@ private PublisherRepository publisherRepository;
         authorRepository.save(korede);
         bookRepository.save(noEjb);
     }
-
-
 }

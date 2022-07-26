@@ -12,10 +12,11 @@ public class AuthorController {
     private AuthorRepository authorRepository;
 
     public AuthorController(AuthorRepository authorRepository) {
+
         this.authorRepository = authorRepository;
     }
 
-    @RequestMapping("/authors")
+    @RequestMapping("/authors") //GET--Type in something
     public String getAuthor(Model model){
       model.addAttribute("authors",authorRepository.findAll());
 
